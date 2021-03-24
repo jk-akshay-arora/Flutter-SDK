@@ -38,6 +38,12 @@ class MoEngageFlutter {
     _moEiOS = MoEiOSCore(_channel);
   }
 
+  void initialiseHandlers() {
+    _channel.setMethodCallHandler(_handler);
+    _moEAndroid = MoEAndroidCore(_channel);
+    _moEiOS = MoEiOSCore(_channel);
+  }
+
   void setUpPushCallbacks(PushCallbackHandler onPushClick) {
     _onPushClick = onPushClick;
   }
